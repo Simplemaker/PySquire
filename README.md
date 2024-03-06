@@ -16,3 +16,8 @@ This codebase will consist of 3 main parts:
 target machine client
 2. An agent which runs on the target machine to accept and execute commands
 3. An attacker server which sends commands to clients
+
+## Node
+For simplicity in web communication, this project will be NodeJS based.
+Webpack will be used to transpile the client into a single file which
+can be easily installed.
