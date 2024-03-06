@@ -19,20 +19,20 @@ config_json['PUBLIC_KEY'] = `\`${public_key}\``
 
 const clientConfig = {
   mode: "production",
-  entry: "./client-src/main.js",
+  entry: "./src/client.js",
   output: {
-    filename: "tar.js",
-    path: path.resolve(__dirname, "build/client"),
+    filename: "client.js",
+    path: path.resolve(__dirname, "build/"),
   },
   target: "node",
   plugins: [new ShebangPlugin(), new webpack.DefinePlugin(config_json)],
 };
 
 const serverConfig = {
-  entry: "./server-src/main.js",
+  entry: "./src/server.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "build/server"),
+    filename: "server.js",
+    path: path.resolve(__dirname, "build/"),
   },
   target: "node",
   externals: [nodeExternals()],
