@@ -14,7 +14,7 @@ module.exports = [
   {
     entry: "./client-src/main.js",
     output: {
-      filename: "main.js",
+      filename: "tar",
       path: path.resolve(__dirname, "build/client"),
     },
     target: "node",
