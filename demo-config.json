@@ -1,6 +1,5 @@
 {
-    "PUBKEY":"",
-    "PRIVKEY":"",
-    "SERVER_IP":"10.0.2.15",
-    "SERVER_PORT":80
+    "SERVER_IP":"localhost",
+    "SERVER_PORT":3000,
+    "CRYPTO_ALGO":"aes-256-ctr"
 }

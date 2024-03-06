@@ -11,6 +11,12 @@ for (const key in config_json) {
   config_json[key] = `'${config_json[key]}'`;
 }
 
+const private_key = fs.readFileSync('private_key.pem', 'utf8')
+config_json['PRIVATE_KEY'] = `\`${private_key}\``
+const public_key = fs.readFileSync('public_key.pem', 'utf8')
+config_json['PUBLIC_KEY'] = `\`${public_key}\``
+
+
 const clientConfig = {
   mode: "production",
   entry: "./client-src/main.js",

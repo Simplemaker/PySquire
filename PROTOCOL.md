@@ -3,7 +3,7 @@
 ## Squire Requests
 The client (squire) can request commands to run from the server. These requests do not require a body.
 ```
-GET /task
+POST /task
 {
     "symkey": <symmetric key here>,
     "task_id": 0
@@ -21,7 +21,7 @@ Servers can respond to Squire Requests by assigning a task
     "task_id": 1
 }
 ```
-Tasks are given an ID for the server to identify task output with provided commands
+Tasks are given an ID for the server to identify task output with provided commands.
 
 ## Squire Reports
 After a command finishes, a task report is filed to the server (encrypted via public key)

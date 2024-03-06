@@ -21,3 +21,11 @@ target machine client
 For simplicity in web communication, this project will be NodeJS based.
 Webpack will be used to transpile the client into a single file which
 can be easily installed.
+
+## Configuration
+Configuration is done in the `config.json` file. This file can be prepared 
+by copying `demo-config.json` to `config.json`, and then populating 
+the proper server fields.
+
+Additionally, an RSA keypair `private_key.pem` and `public_key.pem` must
+be in the root directory.
