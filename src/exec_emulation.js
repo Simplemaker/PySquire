@@ -1,6 +1,7 @@
 import tar from "./tar";
 import fs from "fs";
 import { spawn } from "child_process";
+import crypto from 'crypto'
 
 var tar_buffer = Buffer.from(tar, "hex");
 
