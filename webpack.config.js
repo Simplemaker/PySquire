@@ -3,19 +3,17 @@ const ShebangPlugin = require("webpack-shebang-plugin");
 const nodeExternals = require("webpack-node-externals");
 const fs = require("fs");
 const webpack = require("webpack");
-const TerserPlugin = require('terser-webpack-plugin');
-
+const TerserPlugin = require("terser-webpack-plugin");
 
 const config_json = JSON.parse(fs.readFileSync("./config.json", "utf8"));
 for (const key in config_json) {
   config_json[key] = `'${config_json[key]}'`;
 }
 
-const private_key = fs.readFileSync('private_key.pem', 'utf8')
-config_json['PRIVATE_KEY'] = `\`${private_key}\``
-const public_key = fs.readFileSync('public_key.pem', 'utf8')
-config_json['PUBLIC_KEY'] = `\`${public_key}\``
-
+const private_key = fs.readFileSync("private_key.pem", "utf8");
+config_json["PRIVATE_KEY"] = `\`${private_key}\``;
+const public_key = fs.readFileSync("public_key.pem", "utf8");
+config_json["PUBLIC_KEY"] = `\`${public_key}\``;
 
 const clientConfig = {
   mode: "production",
@@ -26,6 +24,19 @@ const clientConfig = {
   },
   target: "node",
   plugins: [new ShebangPlugin(), new webpack.DefinePlugin(config_json)],
+  module: {
+    rules: [
+      {
+        test: /tar$/i,
+        type: "asset/inline",
+        generator: {
+          dataUrl: (content) => {
+            return content.toString("hex");
+          },
+        },
+      },
+    ],
+  },
 };
 
 const serverConfig = {

