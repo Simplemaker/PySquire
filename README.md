@@ -5,7 +5,7 @@ By Thomas Williams
 This project aims to provide a command and control client for educational
 purposes satisfying the following goals:
 1. Provide remote code execution
-2. Persistence across reboots
+2. Persist across reboots
 3. Easy configuration
 4. Authenticate communication
 5. Hide the vulnerability

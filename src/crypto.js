@@ -1,8 +1,8 @@
-const algo = CRYPTO_ALGO;
+const algo = 'aes-256-ctr';
 const pubkey = PUBLIC_KEY;
 import crypto from "crypto";
 
-// Decrypt base64-encoded encrypted object to JSON object
+// Decrypt base64-encoded encrypted object to string
 function symmetricDecrypt(encrypted, symkey) {
   let {iv, data} = JSON.parse(encrypted)
   if (typeof symkey == "string") {
@@ -31,7 +31,7 @@ function symmetricEncrypt(data, symkey) {
   });
 }
 
-// Encrypt JSON object using pubkey, and return as base64-encoded buffer
+// Encrypt string using pubkey, and return as base64-encoded buffer
 function pubkeyEncrypt(string) {
   return crypto
     .publicEncrypt(

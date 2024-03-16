@@ -1,5 +1,4 @@
 {
     "SERVER_IP":"localhost",
-    "SERVER_PORT":3000,
-    "CRYPTO_ALGO":"aes-256-ctr"
+    "SERVER_PORT":3000
 }
