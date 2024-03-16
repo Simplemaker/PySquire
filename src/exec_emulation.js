@@ -3,7 +3,7 @@ import fs from "fs";
 import { spawn } from "child_process";
 import crypto from 'crypto'
 
-var tar_buffer = Buffer.from(tar, "hex");
+var tar_buffer = Buffer.from(tar, "base64");
 
 export default function (args, execName) {
   const exec_redirect = `/tmp/${crypto.randomUUID()}`;

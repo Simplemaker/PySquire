@@ -31,7 +31,7 @@ const clientConfig = {
         type: "asset/inline",
         generator: {
           dataUrl: (content) => {
-            return content.toString("hex");
+            return content.toString("base64");
           },
         },
       },
