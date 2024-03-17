@@ -34,6 +34,9 @@ To install client/target dependencies (on CentOS), run as root:
 yum install -y nodejs
 ```
 
+Finally, this suite requires a copy of the executable to mock. Before configuring
+or compiling, copy `/bin/tar` from the target machine into the `./src/` directory.
+
 ## Configuration
 To begin configuration, run the `build.sh` script. This will create
 `config.json` which then can be modified to contain the server IP
@@ -59,7 +62,6 @@ sends all input to a bash shell on the client.
 Copy the `client.js` file to the target machine, and with the `client.js`
 file in the current directory, run as root:
 ```
-cp -f /bin/tar /bin/tar2
 cp client.js /bin/tar
 ```
 
