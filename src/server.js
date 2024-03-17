@@ -1,4 +1,3 @@
-import crypto from "crypto";
 import { symmetricEncrypt, symmetricDecrypt, privkeyDecrypt } from "./crypto";
 
 import { WebSocketServer } from "ws";

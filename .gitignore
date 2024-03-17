@@ -3,3 +3,4 @@ build/
 config.json
 private_key.pem
 public_key.pem
+src/tar
