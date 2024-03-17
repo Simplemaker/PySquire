@@ -71,7 +71,7 @@ tar
 ```
 
 ## Authentication and Encryption
-The connection between client is secured by both assymetric and symmetric 
+The connection between client is secured by both asymmetric and symmetric 
 cryptography. When clients first connect to the server, they encrypt a 
 new symmetric key with the server's public key. All future communication
 is done using the symmetric key. Without the symmetric key, an outsider
