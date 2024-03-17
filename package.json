@@ -1,8 +1,7 @@
 {
-  "name": "pysquire",
+  "name": "tarplusplus",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:Simplemaker/PySquire.git",
   "author": "Thomas Williams <Simplemaker@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
